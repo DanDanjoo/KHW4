@@ -6,4 +6,5 @@ data class TaskResponse(
     val description : String?,
     val dueDate : Long,
     val completed : Boolean,
+    val deletedYn : Boolean,
 )
