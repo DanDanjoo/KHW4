@@ -7,15 +7,20 @@ import com.teamsparta.khw4.domain.exception.ModelNotFoundException
 import com.teamsparta.khw4.domain.task.dto.CreateTaskRequest
 import com.teamsparta.khw4.domain.task.dto.TaskResponse
 import com.teamsparta.khw4.domain.task.dto.UpdateTaskRequest
+import com.teamsparta.khw4.domain.task.repository.TaskRepository
 import com.teamsparta.khw4.domain.todoapplication.dto.ApplyTaskRequest
 import com.teamsparta.khw4.domain.todoapplication.dto.TodoApplicationResponse
 import com.teamsparta.khw4.domain.todoapplication.dto.UpdateApplicationStatusRequest
+import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
 
 @Service
-class TaskServiceImpl(): TaskService {
+class TaskServiceImpl(
+    private val taskRepository: TaskRepository
+): TaskService {
+
     //TODO : DB에서 모든 TASK 목록을 조회하여 TaskResponse 목록으로 변환 후 반환
     override fun getAllTasksList(): List<TaskResponse> {
         TODO("Not yet implemented")
@@ -23,6 +28,7 @@ class TaskServiceImpl(): TaskService {
 
 
     override fun getTaskById(taskId: Long): TaskResponse {
+        val task = taskRepository.findByIdOrNull(taskId) ?: throw ModelNotFoundException("Task", taskId)
         // TODO : 만약 taskId에 해당하는 Task가 없다면 throw ModelNotFoundException
         // TODO : DB에서 ID기반으로 TASK를 가져와서 TaskResponse 변환 후 반환
         // TODO("Not yet implemented")
