@@ -58,26 +58,26 @@ class TaskServiceImpl: TaskService {
         //TODO DB에서 taskId, commentId에 해당하는 comment를 가져와서 commentResponse로 변환 후 반환
         TODO("Not yet implemented")
     }
-
+    @Transactional
     override fun addComment(taskId: Long, request: AddCommentRequest): CommentResponse {
         //TODO 만약 taskId에 해당하는 Task가 없다면 throw ModelNotFoundException
         //TODO DB에서 taskId에 해당하는 Task를 가져와서 Comment를 추가 후 DB에 저장, 결과들을 CommentResponse로 변환 후 반환
         TODO("Not yet implemented")
     }
-
+    @Transactional
     override fun updateComment(taskId: Long, commentId: Long, request: UpdateCommentRequest): CommentResponse {
         //TODO 만약 taskId, commentId에 해당하는 Comment가 없다면 throw ModelNotFoundException
         /*TODO DB에서 taskId, commentId에 해당하는 Comment를 가져와서
         *   request로 업데이트 후 DB에 저장, 결과들을 CommentResponse로 변환 후 반환 */
         TODO("Not yet implemented")
     }
-
+    @Transactional
     override fun removeComment(taskId: Long, commentId: Long) {
         //TODO 만약 taskId에 해당하는 Task가 없으면 throw ModelNotFoundException
         //TODO DB에서 taskId, commentId에 해당하는 Comment를 가져오고, 삭제
         TODO("Not yet implemented")
     }
-
+    @Transactional
     override fun applyTask(taskId: Long, request: ApplyTaskRequest): TodoApplicationResponse {
         //TODO 만약 taskId에 해당하는 Task가 없다면 throw ModelNotFoundException
         TODO("Not yet implemented")
@@ -94,9 +94,8 @@ class TaskServiceImpl: TaskService {
         // TODO DB에서 taskId에 해당하는 Task를 가져오고 하위 TodoApplication들을  TodoApplicationResponse로 변환 후 반환
         TODO("Not yet implemented")
     }
-
+    @Transactional
     override fun updateTodoApplicationStatus(
-
         courseId: Long,
         applicationId: Long,
         request: UpdateApplicationStatusRequest
