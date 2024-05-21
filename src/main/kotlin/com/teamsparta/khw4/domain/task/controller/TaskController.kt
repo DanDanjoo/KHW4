@@ -1,5 +1,6 @@
 package com.teamsparta.khw4.domain.task.controller
 
+import com.teamsparta.khw4.domain.exception.ModelNotFoundException
 import com.teamsparta.khw4.domain.task.dto.CreateTaskRequest
 import com.teamsparta.khw4.domain.task.dto.TaskResponse
 import com.teamsparta.khw4.domain.task.dto.UpdateTaskRequest
@@ -54,4 +55,6 @@ class TaskController (
             .status(HttpStatus.NO_CONTENT)
             .build()
     }
+
+
 }

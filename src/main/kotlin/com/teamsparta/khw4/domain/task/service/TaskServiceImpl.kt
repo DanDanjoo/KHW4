@@ -1,5 +1,6 @@
 package com.teamsparta.khw4.domain.task.service
 
+import com.teamsparta.khw4.domain.exception.ModelNotFoundException
 import com.teamsparta.khw4.domain.task.dto.CreateTaskRequest
 import com.teamsparta.khw4.domain.task.dto.TaskResponse
 import com.teamsparta.khw4.domain.task.dto.UpdateTaskRequest
@@ -16,9 +17,10 @@ class TaskServiceImpl: TaskService {
 
 
     override fun getTaskById(taskId: Long): TaskResponse {
-        // TODO : 만약 taskId에 해당하는 Task가 없다면 thow ModelNotFoundException
+        // TODO : 만약 taskId에 해당하는 Task가 없다면 throw ModelNotFoundException
         // TODO : DB에서 ID기반으로 TASK를 가져와서 TaskResponse 변환 후 반환
-        TODO("Not yet implemented")
+        // TODO("Not yet implemented")
+        throw ModelNotFoundException(modelName = "Task", id = 1L)
     }
 
     @Transactional
