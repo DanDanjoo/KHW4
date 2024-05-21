@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional
 
 
 @Service
-class TaskServiceImpl: TaskService {
+class TaskServiceImpl(): TaskService {
     //TODO : DB에서 모든 TASK 목록을 조회하여 TaskResponse 목록으로 변환 후 반환
     override fun getAllTasksList(): List<TaskResponse> {
         TODO("Not yet implemented")
